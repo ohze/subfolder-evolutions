@@ -5,6 +5,31 @@ subfolder-evolutions
 [playframework](https://playframework.com) 2.4+ [DB evolutions](https://playframework.com/documentation/2.4.x/Evolutions)
 that can manage sql script from multiple dependency libraries
 
+### Usage
+1. Each library should place evolutions scripts in folder evolutions/<db-name>/<subfolder-name>
+instead of place directly in evolutions/<db-name> as in the plain [evolutions](https://playframework.com/documentation/2.4.x/Evolutions).
+
+  Example: A library `"sd" %% "pay" % "1.0.0"` has scripts `evolutions/default/pay/{1.sql, 2.sql}`
+
+  The library should have the following config in `reference.conf` file:
+`evolutions.default.folders += pay`
+
+2. In the main play application :
+  + add sbt libraryDependencies:
+  ```
+    name := "bank"
+    libraryDependencies ++= Seq(
+      "com.sandinh" %% "subfolder-evolutions" % "2.4.2",
+      "sd" %% "pay" % "1.0.0"
+    )
+  ```
+
+  + (similar,) place evolutions scripts in `conf/evolutions/default/bank/{1.sql, 2.sql, 3.sql}`
+
+  + and add to `conf/application.conf`: `evolutions.default.folders += bank`
+
+3. `subfolder-evolutions` will magically do its job :D
+
 ### Changelogs
 see [CHANGES.md](CHANGES.md)
 
