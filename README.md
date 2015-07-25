@@ -26,7 +26,11 @@ instead of place directly in evolutions/<db-name> as in the plain [evolutions](h
 
   + (similar,) place evolutions scripts in `conf/evolutions/default/bank/{1.sql, 2.sql, 3.sql}`
 
-  + and add to `conf/application.conf`: `evolutions.default.folders += bank`
+  + and add to `conf/application.conf`:
+   ```
+   evolutions.default.folders += bank
+   play.modules.disabled += "play.api.db.evolutions.EvolutionsModule"
+   ```
 
 3. `subfolder-evolutions` will magically do its job :D
 
