@@ -28,6 +28,7 @@ lazy val sample = project.in(file("sample"))
   .settings(coreSettings ++ otherSettings: _*)
   .settings(
     name := "sample-app",
+    publishArtifact := false,
     resolvers += Resolver.bintrayRepo("scalaz", "releases"),
     libraryDependencies += specs2 % Test
   ).dependsOn(module)
