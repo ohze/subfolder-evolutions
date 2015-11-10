@@ -24,7 +24,6 @@ lazy val module = project.in(file("module"))
   )
 
 lazy val sample = project.in(file("sample"))
-  .enablePlugins(PlayScala)
   .settings(coreSettings ++ otherSettings: _*)
   .settings(
     name := "sample-app",
