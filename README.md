@@ -19,7 +19,7 @@ instead of place directly in evolutions/<db-name> as in the plain [evolutions](h
   ```
     name := "bank"
     libraryDependencies ++= Seq(
-      "com.sandinh" %% "subfolder-evolutions" % "2.4.2_1",
+      "com.sandinh" %% "subfolder-evolutions" % "2.4.3",
       "sd" %% "pay" % "1.0.0"
     )
   ```
