@@ -1,5 +1,9 @@
 ### Changelogs
 
+##### 2.5.2
++ update play 2.5.2
++ drop support for scala 2.10.x
+
 ##### 2.4.6
 + update scala 2.11.8, sbt 0.13.11, play 2.4.6 & simplify build.sbt
 

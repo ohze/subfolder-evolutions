@@ -1,9 +1,8 @@
 lazy val commonSettings = Seq(
-  version := "2.4.6",
+  version := "2.5.2",
   scalaVersion := "2.11.8",
-  crossScalaVersions := Seq("2.11.8", "2.10.6"),
   organization := "com.sandinh",
-  scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature", "-Yinline-warnings"/*, "-optimise"*/)
+  scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-feature", "-target:jvm-1.8", "-Ybackend:GenBCode")
 )
 
 lazy val module = project
@@ -18,7 +17,6 @@ lazy val sample = project
   .settings(
     name := "sample-app",
     publishArtifact := false,
-    resolvers += Resolver.bintrayRepo("scalaz", "releases"),
     libraryDependencies += specs2 % Test
   ).dependsOn(module)
 
