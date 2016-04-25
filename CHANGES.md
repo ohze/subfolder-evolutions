@@ -1,5 +1,8 @@
 ### Changelogs
 
+##### 2.4.6
++ update scala 2.11.8, sbt 0.13.11, play 2.4.6 & simplify build.sbt
+
 ##### 2.4.3
 + update play 2.4.3
 

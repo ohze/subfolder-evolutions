@@ -1,30 +1,20 @@
-lazy val coreSettings = Seq(
-  version := "2.4.3",
-  scalaVersion := "2.11.7",
-  crossScalaVersions := Seq(scalaVersion.value, "2.10.6"),
-  organization := "com.sandinh"
+lazy val commonSettings = Seq(
+  version := "2.4.6",
+  scalaVersion := "2.11.8",
+  crossScalaVersions := Seq("2.11.8", "2.10.6"),
+  organization := "com.sandinh",
+  scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature", "-Yinline-warnings"/*, "-optimise"*/)
 )
 
-lazy val otherSettings = Seq(
-  scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature", "-Yinline-warnings"/*, "-optimise"*/),
-
-  //misc - to mute intellij warning when load sbt project
-  dependencyOverrides ++= Set(
-    "org.scala-lang.modules"  %% "scala-parser-combinators" % "1.0.4", // % Optional
-    "org.scala-lang.modules"  %% "scala-xml" % "1.0.5", // % Optional
-    "org.scala-lang" % "scala-reflect" % scalaVersion.value // % Optional
-  )
-)
-
-lazy val module = project.in(file("module"))
-  .settings(coreSettings ++ otherSettings: _*)
+lazy val module = project
+  .settings(commonSettings: _*)
   .settings(
     name := "subfolder-evolutions",
     libraryDependencies += evolutions
   )
 
-lazy val sample = project.in(file("sample"))
-  .settings(coreSettings ++ otherSettings: _*)
+lazy val sample = project
+  .settings(commonSettings: _*)
   .settings(
     name := "sample-app",
     publishArtifact := false,
@@ -33,7 +23,7 @@ lazy val sample = project.in(file("sample"))
   ).dependsOn(module)
 
 lazy val root = project.in(file("."))
-  .settings(coreSettings: _*)
+  .settings(commonSettings: _*)
   .settings(
     publishArtifact := false
   ).aggregate(module, sample)
