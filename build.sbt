@@ -24,7 +24,7 @@ lazy val sample = project
     libraryDependencies += specs2 % Test
   ).dependsOn(module)
 
-lazy val root = project.in(file("."))
+lazy val `subfolder-evolutions-root` = project.in(file("."))
   .settings(commonSettings: _*)
   .settings(
     publishArtifact := false
