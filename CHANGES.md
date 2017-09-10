@@ -1,5 +1,11 @@
 ### Changelogs
 
+##### 2.6.3
++ update play 2.6.3
++ cross compile for scala 2.11.11, 2.12.3
++ update sbt 0.13.16, sbt-sonatype 2.0, sbt-pgp 1.1.0. Use sbt-coursier
++ move source code to github.com/ohze/
+
 ##### 2.5.2
 + update play 2.5.2
 + drop support for scala 2.10.x

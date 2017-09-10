@@ -1,8 +1,12 @@
 lazy val commonSettings = Seq(
-  version := "2.5.2",
-  scalaVersion := "2.11.8",
-  organization := "com.sandinh",
-  scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-feature", "-target:jvm-1.8", "-Ybackend:GenBCode")
+  version := "2.6.3",
+  scalaVersion := "2.12.3",
+  crossScalaVersions := Seq("2.11.11", "2.12.3"),
+  scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-feature", "-target:jvm-1.8"),
+  scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) match {
+    case Some((2, 11)) => Seq("-Ybackend:GenBCode")
+    case _ => Nil
+  })
 )
 
 lazy val module = project

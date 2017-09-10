@@ -1,6 +1,6 @@
 subfolder-evolutions
 ====================
-[![Build Status](https://travis-ci.org/giabao/subfolder-evolutions.svg)](https://travis-ci.org/giabao/subfolder-evolutions)
+[![Build Status](https://travis-ci.org/ohze/subfolder-evolutions.svg)](https://travis-ci.org/ohze/subfolder-evolutions)
 
 [playframework](https://playframework.com) 2.4+ [DB evolutions](https://playframework.com/documentation/2.4.x/Evolutions)
 that can manage sql script from multiple dependency libraries

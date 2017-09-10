@@ -1,4 +1,13 @@
-pomExtra in Global := <url>https://github.com/giabao/subfolder-evolutions</url>
+publishMavenStyle := true
+
+publishTo in Global := Some(
+  if (isSnapshot.value)
+    Opts.resolver.sonatypeSnapshots
+  else
+    Opts.resolver.sonatypeStaging
+)
+
+pomExtra in Global := <url>https://github.com/ohze/subfolder-evolutions</url>
   <licenses>
     <license>
       <name>Apache 2</name>
@@ -7,8 +16,8 @@ pomExtra in Global := <url>https://github.com/giabao/subfolder-evolutions</url>
     </license>
   </licenses>
   <scm>
-    <url>https://github.com/giabao/subfolder-evolutions</url>
-    <connection>scm:git:git@github.com:giabao/subfolder-evolutions.git</connection>
+    <url>https://github.com/ohze/subfolder-evolutions</url>
+    <connection>scm:git:git@github.com:ohze/subfolder-evolutions.git</connection>
   </scm>
   <developers>
     <developer>
