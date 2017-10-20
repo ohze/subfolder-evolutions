@@ -1,5 +1,9 @@
 ### Changelogs
 
+##### 2.6.6
++ update play 2.6.6, scala 2.12.4
++ use sbt 1.0.2, sbt-coursier 1.0.0-RC12
+
 ##### 2.6.3
 + update play 2.6.3
 + cross compile for scala 2.11.11, 2.12.3
