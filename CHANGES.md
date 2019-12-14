@@ -1,5 +1,10 @@
 ### Changelogs
 
+##### 2.8.0
++ update sbt 1.3.4, sbt-sonatype 3.8.1, sbt-pgp 2.0.0
++ update play 2.6.7 -> 2.8.0
++ support scala 2.13 & drop support for scala 2.11 (play 2.8 drop support for scala 2.11)
+
 ##### 2.6.7
 + update play 2.6.7
 + cross compile for scala 2.12.4, 2.11.12
