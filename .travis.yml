@@ -1,20 +1,16 @@
-sudo: required
-dist: trusty
+dist: xenial
 language: scala
 
-scala:
-- 2.12.4
-- 2.11.12
+jdk:
+  - openjdk8
+  - openjdk11
 
 env:
-- JDK=oraclejdk8
-- JDK=openjdk8
-
-before_script:
-  - jdk_switcher use $JDK
+  - SCALA_VERSION=2.13.1
+  - SCALA_VERSION=2.12.10
 
 script:
-  - sbt ++$TRAVIS_SCALA_VERSION test
+  - sbt ++$SCALA_VERSION test
 
 before_cache:
 # Cleanup the cached directories to avoid unnecessary cache updates
