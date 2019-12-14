@@ -1,11 +1,6 @@
 publishMavenStyle := true
 
-publishTo in Global := Some(
-  if (isSnapshot.value)
-    Opts.resolver.sonatypeSnapshots
-  else
-    Opts.resolver.sonatypeStaging
-)
+publishTo in Global := sonatypePublishToBundle.value
 
 pomExtra in Global := <url>https://github.com/ohze/subfolder-evolutions</url>
   <licenses>

@@ -1,11 +1,11 @@
 lazy val commonSettings = Seq(
   organization := "com.sandinh",
-  version := "2.6.7",
-  scalaVersion := "2.12.4",
-  crossScalaVersions := Seq("2.11.12", "2.12.4"),
-  scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-feature", "-target:jvm-1.8"),
+  version := "2.8.0-SNAPSHOT",
+  scalaVersion := "2.13.1",
+  crossScalaVersions := Seq("2.12.10", "2.13.1"),
+  scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-feature"),
   scalacOptions ++= (CrossVersion.partialVersion(scalaVersion.value) match {
-    case Some((2, 11)) => Seq("-Ybackend:GenBCode")
+    case Some((2, 12)) => Seq("-target:jvm-1.8")
     case _ => Nil
   })
 )
