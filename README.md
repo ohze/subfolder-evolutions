@@ -34,6 +34,21 @@ instead of place directly in `evolutions/<db-name>` as in the plain [evolutions]
 
 3. `subfolder-evolutions` will magically do its job :D
 
+#### publish checklist
++ should add unit test
++ MUST run `sbt clean +test`
+(`+test` to test against all crossScalaVersions in [[build.sbt]])
++ if you publish from sbtshell in IDEA or from an already running sbt shell then
+MUST run the following tasks:
+```sbtshell
+reload
+clean
++test
+```
++ MUST update [CHANGES.md]!
++ MUST tag the publishing git commit
++ MUST push to github (push tag too)
+
 ### Changelogs
 see [CHANGES.md](CHANGES.md)
 
