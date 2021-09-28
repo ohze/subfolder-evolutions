@@ -1,3 +1,7 @@
+def play(id: String) = "com.typesafe.play" %% id % "2.8.0"
+val evolutions = play("play-jdbc-evolutions")
+val specs2 = play("play-specs2")
+
 lazy val commonSettings = Seq(
   organization := "com.sandinh",
   version := "2.8.0",
