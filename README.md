@@ -1,6 +1,6 @@
 subfolder-evolutions
 ====================
-[![Build Status](https://travis-ci.org/ohze/subfolder-evolutions.svg)](https://travis-ci.org/ohze/subfolder-evolutions)
+[![CI](https://github.com/ohze/subfolder-evolutions/actions/workflows/sbt-devops.yml/badge.svg)](https://github.com/ohze/subfolder-evolutions/actions/workflows/sbt-devops.yml)
 
 [playframework](https://playframework.com) 2.4+ [DB evolutions](https://playframework.com/documentation/2.6.x/Evolutions)
 that can manage sql script from multiple dependency libraries
