@@ -1,4 +1,4 @@
-def play(id: String) = "com.typesafe.play" %% id % "2.8.0"
+def play(id: String) = "com.typesafe.play" %% id % "2.8.8"
 val evolutions = play("play-jdbc-evolutions")
 val specs2 = play("play-specs2")
 
