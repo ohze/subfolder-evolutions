@@ -1,5 +1,12 @@
 ### Changelogs
 
+##### 2.8.1
++ We don't follow play versioning anymore.
++ Support play 2.6.x, 2.7.x, 2.8.x, scala 2.11, 2.12, 2.13  
+  Thanks [sbt-projectmatrix](https://github.com/sbt/sbt-projectmatrix)
++ Update sbt & use [sbt-devops](https://github.com/ohze/sbt-devops)
++ Binary & source compatible with 2.8.0 & 2.6.7
+
 ##### 2.8.0
 + update sbt 1.3.4, sbt-sonatype 3.8.1, sbt-pgp 2.0.0
 + update play 2.6.7 -> 2.8.0
