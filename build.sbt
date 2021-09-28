@@ -20,13 +20,16 @@ lazy val sample = project
     name := "sample-app",
     publishArtifact := false,
     libraryDependencies += specs2 % Test
-  ).dependsOn(module)
+  )
+  .dependsOn(module)
 
-lazy val `subfolder-evolutions-root` = project.in(file("."))
+lazy val `subfolder-evolutions-root` = project
+  .in(file("."))
   .settings(commonSettings)
   .settings(
     publishArtifact := false
-  ).aggregate(module, sample)
+  )
+  .aggregate(module, sample)
 
 inThisBuild(
   Seq(

@@ -9,12 +9,20 @@ class DisabledModuleSpec extends Specification {
     //play.api.inject.Modules.locate at
     //loadModules at
     //play.api.inject.guice.GuiceApplicationBuilder.applicationModule
-    val includes = configuration.getOptional[Seq[String]]("play.modules.enabled").getOrElse(Nil)
-    val excludes = configuration.getOptional[Seq[String]]("play.modules.disabled").getOrElse(Nil)
+    val includes = configuration
+      .getOptional[Seq[String]]("play.modules.enabled")
+      .getOrElse(Nil)
+    val excludes = configuration
+      .getOptional[Seq[String]]("play.modules.disabled")
+      .getOrElse(Nil)
     val moduleClassNames = includes.toSet -- excludes
 
-    moduleClassNames must contain("play.api.db.evolutions.SubFolderEvolutionsModule")
+    moduleClassNames must contain(
+      "play.api.db.evolutions.SubFolderEvolutionsModule"
+    )
 
-    moduleClassNames must not(contain("play.api.db.evolutions.EvolutionsModule"))
+    moduleClassNames must not(
+      contain("play.api.db.evolutions.EvolutionsModule")
+    )
   }.pendingUntilFixed("See issue #1")
 }

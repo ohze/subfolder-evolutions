@@ -9,7 +9,9 @@ class SubFolderEvolutionsModule extends Module {
       bind[EvolutionsConfig].toProvider[DefaultEvolutionsConfigParser],
       bind[EvolutionsReader].to[SubFolderEvolutionsReader],
       bind[EvolutionsApi].to[DefaultEvolutionsApi],
-      bind[ApplicationEvolutions].toProvider[ApplicationEvolutionsProvider].eagerly()
+      bind[ApplicationEvolutions]
+        .toProvider[ApplicationEvolutionsProvider]
+        .eagerly()
     )
   }
 }
