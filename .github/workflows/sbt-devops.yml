@@ -55,9 +55,9 @@ jobs:
           SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           # optional
           #CI_CLEAN: '; clean ; sonatypeBundleClean'
-          #CI_RELEASE: '+publishSigned'
+          CI_RELEASE: 'publishSigned'
           #CI_SONATYPE_RELEASE: 'sonatypeBundleRelease'
-          #CI_SNAPSHOT_RELEASE: '+publish'
+          CI_SNAPSHOT_RELEASE: 'publish'
       - id: info
         run: echo "::set-output name=info::$(cat "$GITHUB_WORKSPACE/target/publish.info")"
 
