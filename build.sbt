@@ -1,56 +1,21 @@
-import PlayAxis._
-
 lazy val module = projectMatrix
-  .settings(name := "subfolder-evolutions")
-  .customRow(
-    scalaVersions = Seq(scala211, scala212),
-    axisValues = Seq(play26, VirtualAxis.jvm),
-    settings = Seq(
-      moduleName := name.value + "_2_6",
-      libraryDependencies += play26.evolutions,
-    ),
+  .settings(
+    name := "subfolder-evolutions",
+    libraryDependencies ++= play("jdbc-evolutions").value,
   )
-  .customRow(
-    scalaVersions = Seq(scala211, scala212, scala213),
-    axisValues = Seq(play27, VirtualAxis.jvm),
-    settings = Seq(
-      moduleName := name.value + "_2_7",
-      libraryDependencies += play27.evolutions,
-    ),
-  )
-  .customRow(
-    scalaVersions = Seq(scala212, scala213),
-    axisValues = Seq(play28, VirtualAxis.jvm),
-    settings = Seq(
-      moduleName := name.value,
-      libraryDependencies += play28.evolutions,
-    ),
-  )
+  .playAxis(play26, Seq(scala211, scala212))
+  .playAxis(play27, Seq(scala211, scala212, scala213))
+  .playAxis(play28, Seq(scala212, scala213))
 
 lazy val sample = projectMatrix
-  .settings(skipPublish)
-  .settings(name := "sample-app")
-  .customRow(
-    scalaVersions = Seq(scala211, scala212),
-    axisValues = Seq(play26, VirtualAxis.jvm),
-    settings = Seq(
-      libraryDependencies += play26.specs2 % Test,
-    ),
+  .settings(
+    skipPublish,
+    name := "sample-app",
+    libraryDependencies ++= play("specs2" -> Test).value
   )
-  .customRow(
-    scalaVersions = Seq(scala211, scala212, scala213),
-    axisValues = Seq(play27, VirtualAxis.jvm),
-    settings = Seq(
-      libraryDependencies += play27.specs2 % Test,
-    ),
-  )
-  .customRow(
-    scalaVersions = Seq(scala212, scala213),
-    axisValues = Seq(play28, VirtualAxis.jvm),
-    settings = Seq(
-      libraryDependencies += play28.specs2 % Test,
-    ),
-  )
+  .playAxis(play26, Seq(scala211, scala212))
+  .playAxis(play27, Seq(scala211, scala212, scala213))
+  .playAxis(play28, Seq(scala212, scala213))
   .dependsOn(module)
 
 lazy val `subfolder-evolutions-root` = project
